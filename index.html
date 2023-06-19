@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dz11</title>
+  <script>
+    function performOperations() {
+      var array = [16,-37,54,-4,72,-56,47,4,-16,25,-37,46,4,-51,27,-63,4,-54,76,-4,12,-35,4,47];
+      
+      // Знайти суму та кількість позитивних елементів
+      var positiveSum = 0;
+      var positiveCount = 0;
+      for (var i = 0; i < array.length; i++) {
+        if (array[i] > 0) {
+          positiveSum += array[i];
+          positiveCount++;
+        }
+      }
+      document.getElementById("sumPositive").textContent = positiveSum;
+      document.getElementById("countPositive").textContent = positiveCount;
+
+      // Знайти мінімальний елемент масиву та його порядковий номер
+      var minElement = Math.min(...array);
+      var minIndex = array.indexOf(minElement);
+      document.getElementById("minElement").textContent = minElement;
+      document.getElementById("minIndex").textContent = minIndex;
+
+      // Знайти максимальний елемент масиву та його порядковий номер
+      var maxElement = Math.max(...array);
+      var maxIndex = array.indexOf(maxElement);
+      document.getElementById("maxElement").textContent = maxElement;
+      document.getElementById("maxIndex").textContent = maxIndex;
+
+      // Визначити кількість негативних елементів
+      var negativeCount = 0;
+      for (var i = 0; i < array.length; i++) {
+        if (array[i] < 0) {
+          negativeCount++;
+        }
+      }
+      document.getElementById("countNegative").textContent = negativeCount;
+
+      // Знайти кількість непарних позитивних елементів
+      var oddPositiveCount = 0;
+      for (var i = 0; i < array.length; i++) {
+        if (array[i] > 0 && array[i] % 2 !== 0) {
+          oddPositiveCount++;
+        }
+      }
+      document.getElementById("countOddPositive").textContent = oddPositiveCount;
+
+      // Знайти кількість парних позитивних елементів
+      var evenPositiveCount = 0;
+      for (var i = 0; i < array.length; i++) {
+        if (array[i] > 0 && array[i] % 2 === 0) {
+          evenPositiveCount++;
+        }
+      }
+      document.getElementById("countEvenPositive").textContent = evenPositiveCount;
+
+      // Знайти суму парних позитивних елементів
+      var evenPositiveSum = 0;
+      for (var i = 0; i < array.length; i++) {
+        if (array[i] > 0 && array[i] % 2 === 0) {
+          evenPositiveSum += array[i];
+        }
+      }
+      document.getElementById("sumEvenPositive").textContent = evenPositiveSum;
+
+      // Знайти суму непарних позитивних елементів
+      var oddPositiveSum = 0;
+      for (var i = 0; i < array.length; i++) {
+        if (array[i] > 0 && array[i] % 2 !== 0) {
+          oddPositiveSum += array[i];
+        }
+      }
+      document.getElementById("sumOddPositive").textContent = oddPositiveSum;
+
+      // Знайти добуток позитивних елементів
+      var positiveProduct = 1;
+      for (var i = 0; i < array.length; i++) {
+        if (array[i] > 0) {
+          positiveProduct *= array[i];
+        }
+      }
+      document.getElementById("productPositive").textContent = positiveProduct;
+
+      // Знайти найбільший серед елементів масиву, остальні обнулити
+      var maxElementValue = Math.max(...array);
+      for (var i = 0; i < array.length; i++) {
+        if (array[i] !== maxElementValue) {
+          array[i] = 0;
+        }
+      }
+      document.getElementById("modifiedArray").textContent = array;
+    }
+  </script>
+</head>
+<body>
+  <h1>Операції з масивом</h1>
+  <button onclick="performOperations()">Виконати операції</button>
+  <p>Сума позитивних елементів: <span id="sumPositive"></span></p>
+  <p>Кількість позитивних елементів: <span id="countPositive"></span></p>
+  <p>Мінімальний елемент масиву: <span id="minElement"></span></p>
+  <p>Його порядковий номер: <span id="minIndex"></span></p>
+  <p>Максимальний елемент масиву: <span id="maxElement"></span></p>
+  <p>Його порядковий номер: <span id="maxIndex"></span></p>
+  <p>Кількість негативних елементів: <span id="countNegative"></span></p>
+  <p>Кількість непарних позитивних елементів: <span id="countOddPositive"></span></p>
+  <p>Кількість парних позитивних елементів: <span id="countEvenPositive"></span></p>
+  <p>Сума парних позитивних елементів: <span id="sumEvenPositive"></span></p>
+  <p>Сума непарних позитивних елементів: <span id="sumOddPositive"></span></p>
+  <p>Добуток позитивних елементів: <span id="productPositive"></span></p>
+  <p>Модифікований масив: <span id="modifiedArray"></span></p>
+</body>
+</html>
